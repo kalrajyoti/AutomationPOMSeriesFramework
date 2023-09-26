@@ -12,8 +12,8 @@
 		<listener
 			class-name="com.qa.opencart.listeners.AnnotationTransformer" />
 
-		<listener
-			class-name="com.qa.opencart.listeners.ItextPdfListener" />
+<!--		<listener-->
+<!--			class-name="com.qa.opencart.listeners.ItextPdfListener" />-->
 
 	</listeners>
 

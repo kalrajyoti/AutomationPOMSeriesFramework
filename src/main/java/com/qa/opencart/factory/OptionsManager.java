@@ -49,18 +49,18 @@ public class OptionsManager {
 	
 	public FirefoxOptions getFirefoxOptions() {
 		fo = new FirefoxOptions();
-		if(Boolean.parseBoolean(prop.getProperty("headless"))) {
-			fo.addArguments("--headless");
-		}
-		if(Boolean.parseBoolean(prop.getProperty("incognito"))) {
-			fo.addArguments("--incognito");
-		}
-		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
-			fo.setCapability("browserName", "firefox");
-			fo.setBrowserVersion(prop.getProperty("browserversion").trim());
+//		if(Boolean.parseBoolean(prop.getProperty("headless"))) {
+//			fo.addArguments("--headless");
+//		}
+//		if(Boolean.parseBoolean(prop.getProperty("incognito"))) {
+//			fo.addArguments("--incognito");
+//		}
+//		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+//			fo.setCapability("browserName", "firefox");
+//			fo.setBrowserVersion(prop.getProperty("browserversion").trim());
 
 			//fo.setCapability("enableVNC", true);
-		}
+		//}
 		return fo;
 	}
 	

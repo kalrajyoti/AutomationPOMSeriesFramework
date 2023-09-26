@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="4.328" tests="19" errors="0" skipped="11" failures="8">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="62.588" tests="28" errors="0" skipped="3" failures="1">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dbrowser=chrome"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dbrowser=firefox"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="maven.home" value="/usr/local/Cellar/maven/3.8.4/libexec"/>
@@ -40,15 +40,15 @@
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="browser" value="chrome"/>
+    <property name="browser" value="firefox"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="java.vendor.version" value="Homebrew"/>
     <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
     <property name="java.io.tmpdir" value="/var/folders/55/ljmy2rss21j12lhsy2g5ykc0mpf6lr/T/"/>
     <property name="java.version" value="17.0.2"/>
-    <property name="user.dir" value="/Users/jyoti.kalra/Desktop/March2023POMSeriesFramework"/>
+    <property name="user.dir" value="/Users/jyoti.kalra/Documents/GitHub/AutomationPOMSeriesFramework"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/jyoti.kalra/Desktop/March2023POMSeriesFramework"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/jyoti.kalra/Documents/GitHub/AutomationPOMSeriesFramework"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/jyoti.kalra/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
@@ -61,189 +61,250 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="setup" classname="com.qa.opencart.tests.ProductInfoTest" time="3.097">
-    <failure message="Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;ndi-mb-199&apos;, ip: &apos;fe80:0:0:0:1410:c510:92d1:4ea%en0&apos;&#10;Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]&#10;Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
-Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'ndi-mb-199', ip: 'fe80:0:0:0:1410:c510:92d1:4ea%en0'
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.5.2', java.version: '17.0.2'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}
-Caused by: java.io.UncheckedIOException: java.net.ConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused
-</failure>
+  <testcase name="loginPageTitleTest" classname="com.qa.opencart.tests.LoginPageTest" time="0">
+    <skipped message="did not expect to find [Account Login123] but found [null]"/>
     <system-out><![CDATA[...
 ... TestNG 7.0.0 by CÃ©dric Beust (cedric@beust.com)
 ...
 
+I am in onStart method Accounts Page Test
+I am in onStart method ProductInfo Page Test
+I am in onStart method Login Page Test
 I am in onStart method Register Page Test
 Test Suite started!
-I am in onStart method ProductInfo Page Test
 Test Suite started!
-I am in onStart method Accounts Page Test
 Test Suite started!
 env name is : null
 env name is : null
+no env is given...hence running it on QA env..by default
+no env is given...hence running it on QA env..by default
 env name is : null
 no env is given...hence running it on QA env..by default
-no env is given...hence running it on QA env..by default
-no env is given...hence running it on QA env..by default
-browser name is : chrome
-browser name is : chrome
-browser name is : chrome
-Running tests on GRID with browser: chrome
-Running tests on GRID with browser: chrome
-Running tests on GRID with browser: chrome
-I am in onStart method Login Page Test
+browser name is : firefox
+browser name is : firefox
+browser name is : firefox
+Running tests on GRID with browser: firefox
+Running tests on GRID with browser: firefox
+Running tests on GRID with browser: firefox
 Test Suite started!
 env name is : null
 no env is given...hence running it on QA env..by default
-browser name is : chrome
-Running tests on GRID with browser: chrome
+browser name is : firefox
+Running tests on GRID with browser: firefox
+I am in onTestStart method loginPageTitleTest start
+loginPageTitleTest started!
+App creds are: janautomation@gmail.com:Selenium@12345
+reading the data from sheet: register
+I am in onTestStart method userRegisterTest start
+App creds are: janautomation@gmail.com:Selenium@12345
+userRegisterTest started!
+Account Login123 title value is not present...
+Login Page title is: null
+I am in onTestSkipped method loginPageTitleTest skipped
 ]]></system-out>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Sep 25, 2023 6:39:44 PM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
+Sep 26, 2023 11:29:26 AM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
 INFO: Using OpenTelemetry for tracing
 log4j:WARN No appenders could be found for logger (io.netty.util.internal.logging.InternalLoggerFactory).
 log4j:WARN Please initialize the log4j system properly.
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be "Account Login123". Current title: "Account Login" (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.5.2', java.version: '17.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0.1, moz:accessibilityChecks: false, moz:buildID: 20230912013654, moz:debuggerAddress: 127.0.0.1:21659, moz:firefoxOptions: {binary: /opt/firefox-latest/firefox}, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 5.10.104-linuxkit, moz:processID: 848, moz:profile: /tmp/rust_mozprofile17zK06, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://localhost:4444/session..., se:cdpVersion: 85.0, se:noVncPort: 7900, se:vnc: ws://localhost:4444/session..., se:vncEnabled: true, se:vncLocalAddress: ws://172.21.0.4:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 385acd4b-89da-4641-9ea9-d458db2ed709
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.qa.opencart.utils.ElementUtil.waitForTitleIs(ElementUtil.java:356)
+	at com.qa.opencart.pages.LoginPage.getLoginPageTitle(LoginPage.java:35)
+	at com.qa.opencart.tests.LoginPageTest.loginPageTitleTest(LoginPageTest.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
 ]]></system-err>
   </testcase>
-  <testcase name="setup" classname="com.qa.opencart.tests.AccountsPageTest" time="3.099">
-    <failure message="Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;ndi-mb-199&apos;, ip: &apos;fe80:0:0:0:1410:c510:92d1:4ea%en0&apos;&#10;Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]&#10;Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
-Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'ndi-mb-199', ip: 'fe80:0:0:0:1410:c510:92d1:4ea%en0'
+  <testcase name="loginPageTitleTest" classname="com.qa.opencart.tests.LoginPageTest" time="0">
+    <skipped message="did not expect to find [Account Login123] but found [null]"/>
+    <system-out><![CDATA[searchTest passed!
+I am in onTestStart method searchTest start
+searchTest started!
+Account Login123 title value is not present...
+Login Page title is: null
+I am in onTestSkipped method loginPageTitleTest skipped
+]]></system-out>
+    <system-err><![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be "Account Login123". Current title: "Account Login" (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.5.2', java.version: '17.0.2'
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}
-Caused by: java.io.UncheckedIOException: java.net.ConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused
-</failure>
-  </testcase>
-  <testcase name="setup" classname="com.qa.opencart.tests.RegisterPageTest" time="3.099">
-    <failure message="Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;ndi-mb-199&apos;, ip: &apos;fe80:0:0:0:1410:c510:92d1:4ea%en0&apos;&#10;Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]&#10;Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
-Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'ndi-mb-199', ip: 'fe80:0:0:0:1410:c510:92d1:4ea%en0'
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.5.2', java.version: '17.0.2'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}
-Caused by: java.io.UncheckedIOException: java.net.ConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused
-</failure>
-  </testcase>
-  <testcase name="setup" classname="com.qa.opencart.tests.LoginPageTest" time="3.099">
-    <failure message="Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;ndi-mb-199&apos;, ip: &apos;fe80:0:0:0:1410:c510:92d1:4ea%en0&apos;&#10;Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]&#10;Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
-Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'ndi-mb-199', ip: 'fe80:0:0:0:1410:c510:92d1:4ea%en0'
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.5.2', java.version: '17.0.2'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}
-Caused by: java.io.UncheckedIOException: java.net.ConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused
-</failure>
-  </testcase>
-  <testcase name="regSetup" classname="com.qa.opencart.tests.RegisterPageTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="accPageSetup" classname="com.qa.opencart.tests.AccountsPageTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="prodInfoSetup" classname="com.qa.opencart.tests.ProductInfoTest" time="0">
-    <skipped/>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0.1, moz:accessibilityChecks: false, moz:buildID: 20230912013654, moz:debuggerAddress: 127.0.0.1:21659, moz:firefoxOptions: {binary: /opt/firefox-latest/firefox}, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 5.10.104-linuxkit, moz:processID: 848, moz:profile: /tmp/rust_mozprofile17zK06, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://localhost:4444/session..., se:cdpVersion: 85.0, se:noVncPort: 7900, se:vnc: ws://localhost:4444/session..., se:vncEnabled: true, se:vncLocalAddress: ws://172.21.0.4:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 385acd4b-89da-4641-9ea9-d458db2ed709
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.qa.opencart.utils.ElementUtil.waitForTitleIs(ElementUtil.java:356)
+	at com.qa.opencart.pages.LoginPage.getLoginPageTitle(LoginPage.java:35)
+	at com.qa.opencart.tests.LoginPageTest.loginPageTitleTest(LoginPageTest.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:204)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]></system-err>
   </testcase>
   <testcase name="loginPageTitleTest" classname="com.qa.opencart.tests.LoginPageTest" time="0">
-    <skipped message="Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;ndi-mb-199&apos;, ip: &apos;fe80:0:0:0:1410:c510:92d1:4ea%en0&apos;&#10;Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]&#10;Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}"/>
-    <system-out><![CDATA[reading the data from sheet: register
-I am in onTestStart method accPageHeadersCountTest start
-I am in onTestStart method productHeaderTest start
-I am in onTestStart method loginPageTitleTest start
-accPageHeadersCountTest started!
-loginPageTitleTest started!
-productHeaderTest started!
-]]></system-out>
-  </testcase>
-  <testcase name="loginPageTitleTest" classname="com.qa.opencart.tests.LoginPageTest" time="0.034">
-    <failure message="Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because the return value of &quot;com.qa.opencart.factory.DriverFactory.getDriver()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because the return value of "com.qa.opencart.factory.DriverFactory.getDriver()" is null
-</failure>
-  </testcase>
-  <testcase name="accPageHeadersCountTest" classname="com.qa.opencart.tests.AccountsPageTest" time="0">
-    <skipped message="Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;ndi-mb-199&apos;, ip: &apos;fe80:0:0:0:1410:c510:92d1:4ea%en0&apos;&#10;Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]&#10;Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}"/>
-  </testcase>
-  <testcase name="accPageHeadersCountTest" classname="com.qa.opencart.tests.AccountsPageTest" time="0.034">
-    <failure message="Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because the return value of &quot;com.qa.opencart.factory.DriverFactory.getDriver()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because the return value of "com.qa.opencart.factory.DriverFactory.getDriver()" is null
-</failure>
-    <system-out><![CDATA[I am in onTestFailure method productHeaderTest failed
-]]></system-out>
-  </testcase>
-  <testcase name="productHeaderTest" classname="com.qa.opencart.tests.ProductInfoTest" time="0">
-    <skipped message="Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;ndi-mb-199&apos;, ip: &apos;fe80:0:0:0:1410:c510:92d1:4ea%en0&apos;&#10;Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]&#10;Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}"/>
-    <system-out><![CDATA[I am in onTestSkipped method loginPageTitleTest skipped
-]]></system-out>
-  </testcase>
-  <testcase name="productHeaderTest" classname="com.qa.opencart.tests.ProductInfoTest" time="0.034">
-    <failure message="Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because the return value of &quot;com.qa.opencart.factory.DriverFactory.getDriver()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because the return value of "com.qa.opencart.factory.DriverFactory.getDriver()" is null
-</failure>
-    <system-out><![CDATA[I am in onTestSkipped method accPageHeadersCountTest skipped
-I am in onTestSkipped method productHeaderTest skipped
-loginPageTitleTest skipped!
-productHeaderTest skipped!
-accPageHeadersCountTest skipped!
-]]></system-out>
-  </testcase>
-  <testcase name="tearDown" classname="com.qa.opencart.tests.ProductInfoTest" time="0">
-    <skipped/>
-    <system-out><![CDATA[I am in onTestFailure method accPageHeadersCountTest failed
-I am in onTestFailure method loginPageTitleTest failed
-productHeaderTest failed!
-accPageHeadersCountTest failed!
-loginPageTitleTest failed!
-]]></system-out>
-  </testcase>
-  <testcase name="tearDown" classname="com.qa.opencart.tests.LoginPageTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="tearDown" classname="com.qa.opencart.tests.AccountsPageTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="userRegisterTest" classname="com.qa.opencart.tests.RegisterPageTest" time="0">
-    <skipped message="Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. &#10;Host info: host: &apos;ndi-mb-199&apos;, ip: &apos;fe80:0:0:0:1410:c510:92d1:4ea%en0&apos;&#10;Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]&#10;Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}"/>
-    <system-out><![CDATA[I am in onFinish method Login Page Test
-I am in onFinish method ProductInfo Page Test
-I am in onFinish method Accounts Page Test
-Test Suite is ending!
-Test Suite is ending!
-Test Suite is ending!
+    <skipped message="did not expect to find [Account Login123] but found [null]"/>
+    <system-out><![CDATA[userRegisterTest passed!
 I am in onTestStart method userRegisterTest start
 userRegisterTest started!
+Account Login123 title value is not present...
+Login Page title is: null
+I am in onTestSkipped method loginPageTitleTest skipped
 ]]></system-out>
+    <system-err><![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be "Account Login123". Current title: "Account Login" (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.5.2', java.version: '17.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0.1, moz:accessibilityChecks: false, moz:buildID: 20230912013654, moz:debuggerAddress: 127.0.0.1:21659, moz:firefoxOptions: {binary: /opt/firefox-latest/firefox}, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 5.10.104-linuxkit, moz:processID: 848, moz:profile: /tmp/rust_mozprofile17zK06, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://localhost:4444/session..., se:cdpVersion: 85.0, se:noVncPort: 7900, se:vnc: ws://localhost:4444/session..., se:vncEnabled: true, se:vncLocalAddress: ws://172.21.0.4:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 385acd4b-89da-4641-9ea9-d458db2ed709
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.qa.opencart.utils.ElementUtil.waitForTitleIs(ElementUtil.java:356)
+	at com.qa.opencart.pages.LoginPage.getLoginPageTitle(LoginPage.java:35)
+	at com.qa.opencart.tests.LoginPageTest.loginPageTitleTest(LoginPageTest.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:204)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]></system-err>
   </testcase>
-  <testcase name="userRegisterTest" classname="com.qa.opencart.tests.RegisterPageTest" time="0.005">
-    <failure message="Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because the return value of &quot;com.qa.opencart.factory.DriverFactory.getDriver()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because the return value of "com.qa.opencart.factory.DriverFactory.getDriver()" is null
+  <testcase name="loginPageTitleTest" classname="com.qa.opencart.tests.LoginPageTest" time="0.529">
+    <failure message="did not expect to find [Account Login123] but found [null]" type="java.lang.AssertionError">java.lang.AssertionError: did not expect to find [Account Login123] but found [null]
+	at com.qa.opencart.tests.LoginPageTest.loginPageTitleTest(LoginPageTest.java:28)
 </failure>
-    <system-out><![CDATA[I am in onTestSkipped method userRegisterTest skipped
-userRegisterTest skipped!
+    <system-out><![CDATA[userRegisterTest passed!
+I am in onTestStart method userRegisterTest start
+userRegisterTest started!
+Account Login123 title value is not present...
+Login Page title is: null
+I am in onTestFailure method loginPageTitleTest failed
+Screenshot captured for test case:loginPageTitleTest
 ]]></system-out>
+    <system-err><![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be "Account Login123". Current title: "Account Login" (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.5.2', java.version: '17.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 117.0.1, moz:accessibilityChecks: false, moz:buildID: 20230912013654, moz:debuggerAddress: 127.0.0.1:21659, moz:firefoxOptions: {binary: /opt/firefox-latest/firefox}, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 5.10.104-linuxkit, moz:processID: 848, moz:profile: /tmp/rust_mozprofile17zK06, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://localhost:4444/session..., se:cdpVersion: 85.0, se:noVncPort: 7900, se:vnc: ws://localhost:4444/session..., se:vncEnabled: true, se:vncLocalAddress: ws://172.21.0.4:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 385acd4b-89da-4641-9ea9-d458db2ed709
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.qa.opencart.utils.ElementUtil.waitForTitleIs(ElementUtil.java:356)
+	at com.qa.opencart.pages.LoginPage.getLoginPageTitle(LoginPage.java:35)
+	at com.qa.opencart.tests.LoginPageTest.loginPageTitleTest(LoginPageTest.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:204)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]></system-err>
   </testcase>
-  <testcase name="tearDown" classname="com.qa.opencart.tests.RegisterPageTest" time="0">
-    <skipped/>
-    <system-out><![CDATA[I am in onTestFailure method userRegisterTest failed
-userRegisterTest failed!
-]]></system-out>
-  </testcase>
+  <testcase name="accPageHeadersCountTest" classname="com.qa.opencart.tests.AccountsPageTest" time="0.593"/>
+  <testcase name="accPageHeadersTest" classname="com.qa.opencart.tests.AccountsPageTest" time="0.579"/>
+  <testcase name="accPageTitleTest" classname="com.qa.opencart.tests.AccountsPageTest" time="0.067"/>
+  <testcase name="logoutLinkExistTest" classname="com.qa.opencart.tests.AccountsPageTest" time="0.203"/>
+  <testcase name="searchTest" classname="com.qa.opencart.tests.AccountsPageTest" time="0.295"/>
+  <testcase name="searchTest" classname="com.qa.opencart.tests.AccountsPageTest" time="2.017"/>
+  <testcase name="searchTest" classname="com.qa.opencart.tests.AccountsPageTest" time="0.998"/>
+  <testcase name="productHeaderTest" classname="com.qa.opencart.tests.ProductInfoTest" time="2.659"/>
+  <testcase name="productHeaderTest" classname="com.qa.opencart.tests.ProductInfoTest" time="1.386"/>
+  <testcase name="productHeaderTest" classname="com.qa.opencart.tests.ProductInfoTest" time="0.629"/>
+  <testcase name="productHeaderTest" classname="com.qa.opencart.tests.ProductInfoTest" time="2.697"/>
+  <testcase name="productHeaderTest" classname="com.qa.opencart.tests.ProductInfoTest" time="3.782"/>
+  <testcase name="userRegisterTest" classname="com.qa.opencart.tests.RegisterPageTest" time="2.27"/>
+  <testcase name="userRegisterTest" classname="com.qa.opencart.tests.RegisterPageTest" time="3.746"/>
+  <testcase name="userRegisterTest" classname="com.qa.opencart.tests.RegisterPageTest" time="1.54"/>
+  <testcase name="loginPageURLTest" classname="com.qa.opencart.tests.LoginPageTest" time="0.127"/>
+  <testcase name="isForgotPwdLinkExistTest" classname="com.qa.opencart.tests.LoginPageTest" time="0.492"/>
+  <testcase name="loginTest" classname="com.qa.opencart.tests.LoginPageTest" time="2.345"/>
+  <testcase name="productImagesCountTest" classname="com.qa.opencart.tests.ProductInfoTest" time="2.415"/>
+  <testcase name="productImagesCountTest" classname="com.qa.opencart.tests.ProductInfoTest" time="2.979"/>
+  <testcase name="productImagesCountTest" classname="com.qa.opencart.tests.ProductInfoTest" time="2.005"/>
+  <testcase name="productImagesCountTest" classname="com.qa.opencart.tests.ProductInfoTest" time="2.8"/>
+  <testcase name="productImagesCountTest" classname="com.qa.opencart.tests.ProductInfoTest" time="2.696"/>
+  <testcase name="productInfoTest" classname="com.qa.opencart.tests.ProductInfoTest" time="3.007"/>
 </testsuite>
