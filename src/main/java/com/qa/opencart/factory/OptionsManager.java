@@ -24,6 +24,8 @@ public class OptionsManager {
 	
 	public ChromeOptions getChromeOptions() {
 		co = new ChromeOptions();
+		co.addArguments("-ignore-ssl-errors=yes");
+		co.addArguments("--ignore-certificate-errors");
 
 		if(Boolean.parseBoolean(prop.getProperty("headless"))) {
 			co.addArguments("--headless=new");
@@ -34,8 +36,8 @@ public class OptionsManager {
 
 		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
 			co.setCapability("browserName", "chrome");
-			co.setCapability("browserVersion", "116.0.5845.111");
-			//co.setBrowserVersion(prop.getProperty("browserversion").trim());
+			//co.setCapability("browserVersion", "116.0.5845.111");
+			co.setBrowserVersion(prop.getProperty("browserversion").trim());
 			//co.setCapability("enableVNC", true);
 
 			Map<String, Object> selenoidOptions = new HashMap<>();

@@ -105,9 +105,9 @@ public class DriverFactory {
 		try {
 			switch (browserName.toLowerCase()) {
 			case "chrome":
-				ChromeOptions chromeOptions =new ChromeOptions();
+				//ChromeOptions chromeOptions =new ChromeOptions();
 				tlDriver.set(
-						new RemoteWebDriver(new URL(prop.getProperty("huburl")),chromeOptions));
+						new RemoteWebDriver(new URL(prop.getProperty("huburl")),optionsManager.getChromeOptions()));
 				break;
 			case "firefox":
 				tlDriver.set(
