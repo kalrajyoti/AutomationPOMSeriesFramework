@@ -56,7 +56,7 @@ public class DriverFactory {
 				init_remoteDriver("chrome");
 			} else {
 				// run tests on local
-				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/main/java/com/qa/opencart/drivers/chromedriver");
+				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/main/java/com/qa/opencart/drivers/chromedriver.exe");
 				tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 			}
 			break;
