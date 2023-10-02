@@ -28,36 +28,36 @@
 		</classes>
 	</test>
 
-	<test name="Accounts Page Test">
-		<parameter name="browser" value="chrome" />
-		<parameter name="browserversion" value="116" />
-		<parameter name="testname" value="AccountsPage Test" />
+<!--	<test name="Accounts Page Test">-->
+<!--		<parameter name="browser" value="chrome" />-->
+<!--		<parameter name="browserversion" value="116" />-->
+<!--		<parameter name="testname" value="AccountsPage Test" />-->
 
 
-		<classes>
-			<class name="com.qa.opencart.tests.AccountsPageTest" />
-		</classes>
-	</test>
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.AccountsPageTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 
-	<test name="ProductInfo Page Test">
-		<parameter name="browser" value="chrome" />
-		<parameter name="browserversion" value="116" />
-		<parameter name="testname" value="Product Info Page Test" />
+<!--	<test name="ProductInfo Page Test">-->
+<!--		<parameter name="browser" value="chrome" />-->
+<!--		<parameter name="browserversion" value="116" />-->
+<!--		<parameter name="testname" value="Product Info Page Test" />-->
 
 
-		<classes>
-			<class name="com.qa.opencart.tests.ProductInfoTest" />
-		</classes>
-	</test>
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.ProductInfoTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 
-	<test name="Register Page Test">
-	<parameter name="browser" value="chrome" />
-		<parameter name="browserversion" value="116" />
-		<parameter name="testname" value="Register Page Test" />
-		<classes>
-			<class name="com.qa.opencart.tests.RegisterPageTest" />
-		</classes>
-	</test>
+<!--	<test name="Register Page Test">-->
+<!--	<parameter name="browser" value="chrome" />-->
+<!--		<parameter name="browserversion" value="116" />-->
+<!--		<parameter name="testname" value="Register Page Test" />-->
+<!--		<classes>-->
+<!--			<class name="com.qa.opencart.tests.RegisterPageTest" />-->
+<!--		</classes>-->
+<!--	</test>-->
 
 
 

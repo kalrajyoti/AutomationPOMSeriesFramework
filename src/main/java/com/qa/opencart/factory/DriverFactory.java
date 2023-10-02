@@ -8,6 +8,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
+import com.qa.opencart.utils.ResourceLoader;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +32,7 @@ public class DriverFactory {
 	OptionsManager optionsManager;
 	public static String highlight;
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
-
+	private static final String DEFAULT_PROPERTIES = "config/qa.config.properties";
 	/**
 	 * This is used to initiliaze the driver
 	 * 
@@ -56,7 +58,7 @@ public class DriverFactory {
 				init_remoteDriver("chrome");
 			} else {
 				// run tests on local
-				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/main/java/com/qa/opencart/drivers/chromedriver.exe");
+				//System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/main/java/com/qa/opencart/drivers/chromedriver.exe");
 				tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 			}
 			break;
@@ -101,13 +103,15 @@ public class DriverFactory {
 	private void init_remoteDriver(String browserName) {
 
 		System.out.println("Running tests on GRID with browser: " + browserName);
-
+		System.out.println("Grid URL Is ...." +prop.getProperty("huburl"));
 		try {
 			switch (browserName.toLowerCase()) {
 			case "chrome":
-				//ChromeOptions chromeOptions =new ChromeOptions();
+				ChromeOptions chromeOptions =new ChromeOptions();
+				System.out.println("Grid URL Is ...." +prop.getProperty("huburl"));
 				tlDriver.set(
-						new RemoteWebDriver(new URL(prop.getProperty("huburl")),optionsManager.getChromeOptions()));
+						new RemoteWebDriver(new URL(prop.getProperty("huburl")),chromeOptions));
+				//Capabilities actualCapabilities = ((RemoteWebDriver) getDriver()).getCapabilities();
 				break;
 			case "firefox":
 				tlDriver.set(
@@ -146,10 +150,27 @@ public class DriverFactory {
 		String envName = System.getProperty("env");
 		System.out.println("env name is : " + envName);
 
+//		// check for any override
+//		for(String key: prop.stringPropertyNames()){
+//			if(System.getProperties().containsKey(key)){
+//				prop.setProperty(key, System.getProperty(key));
+//			}
+//		}
+//
+//		// print
+//		System.out.println("Test Properties");
+//		System.out.println("-----------------");
+//		for(String key: prop.stringPropertyNames()){
+//			System.out.println("{}={}"+ key + prop.getProperty(key));
+//		}
+//		System.out.println("-----------------");
+
+
+
 		try {
 			if (envName == null) {
 				System.out.println("no env is given...hence running it on QA env..by default");
-				ip = new FileInputStream("./src/test/resources/config/qa.config.properties");
+				ip = new FileInputStream(DEFAULT_PROPERTIES);
 			} else {
 
 				switch (envName.toLowerCase().trim()) {
@@ -192,6 +213,7 @@ public class DriverFactory {
 	 */
 	public static String getScreenshot(String methodName) {
 		File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+
 		String path = System.getProperty("user.dir") + "/screenshot/" + methodName + "_" + System.currentTimeMillis()
 				+ ".png";
 		System.out.println("user directory: " + System.getProperty("user.dir"));
