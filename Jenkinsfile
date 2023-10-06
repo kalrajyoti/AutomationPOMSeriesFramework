@@ -1,106 +1,47 @@
-pipeline 
-{
+/*
+    Note:
+
+    Windows users use "bat" instead of "sh"
+    For ex: bat 'docker build -t=335022/seleniumdocker .'
+
+    Do not use "335022" to push. Use your dockerhub account
+*/
+pipeline{
+
     agent any
-    
 
+    stages{
 
-    stages 
-    {
-        stage('Build') 
-        {
-            steps
-            {
-                 git 'git@github.com:kalrajyoti/AutomationPOMSeriesFramework.git'
-                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-            post 
-            {
-                success
-                {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
-            }
-        }
-        
-        
-        
-        stage("Deploy to QA"){
+        stage('Build Jar'){
             steps{
-                echo("deploy to qa")
+                sh 'mvn clean package -DskipTests'
             }
         }
-        
-        
-                
-        stage('Regression Automation Tests') {
-            steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'git@github.com:kalrajyoti/AutomationPOMSeriesFramework.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"
-                    
-                }
-            }
-        }
-                
-     
-        stage('Publish Allure Reports') {
-           steps {
-                script {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: '/allure-results']]
-                    ])
-                }
-            }
-        }
-        
-        
-        stage('Publish Extent Report'){
+
+        stage('Build Image'){
             steps{
-                     publishHTML([allowMissing: false,
-                                  alwaysLinkToLastBuild: false, 
-                                  keepAll: true, 
-                                  reportDir: 'reports', 
-                                  reportFiles: 'TestExecutionReport.html', 
-                                  reportName: 'HTML Regression Extent Report', 
-                                  reportTitles: ''])
+                sh 'docker build -t=335022/seleniumdocker .'
             }
         }
-        
-        stage("Deploy to Stage"){
+
+        stage('Push Image'){
+            environment{
+                // assuming you have stored the credentials with this name
+                DOCKER_HUB = credentials('dockerhub-creds')
+            }
             steps{
-                echo("deploy to Stage")
+                // There might be a warning.
+                sh 'docker login -u ${DOCKER_HUB_USR} -p ${DOCKER_HUB_PSW}'
+                sh 'docker push 335022/seleniumdocker'
             }
         }
-        
-        stage('Sanity Automation Test') {
-            steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'git@github.com:kalrajyoti/AutomationPOMSeriesFramework.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml"
-                    
-                }
-            }
-        }
-        
-        
-        
-        stage('Publish sanity Extent Report'){
-            steps{
-                     publishHTML([allowMissing: false,
-                                  alwaysLinkToLastBuild: false, 
-                                  keepAll: true, 
-                                  reportDir: 'reports', 
-                                  reportFiles: 'TestExecutionReport.html', 
-                                  reportName: 'HTML Sanity Extent Report', 
-                                  reportTitles: ''])
-            }
-        }
-        
-        
+
     }
+
+    post {
+        always {
+            sh 'docker logout'
+        }
+    }
+
 }
