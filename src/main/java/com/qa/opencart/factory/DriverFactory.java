@@ -4,11 +4,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
 import com.qa.opencart.utils.ResourceLoader;
+import org.apache.xmlbeans.impl.schema.FileResourceLoader;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -102,8 +104,6 @@ public class DriverFactory {
 
 	private void init_remoteDriver(String browserName) {
 
-		System.out.println("Running tests on GRID with browser: " + browserName);
-		System.out.println("Grid URL Is ...." +prop.getProperty("huburl"));
 		try {
 			switch (browserName.toLowerCase()) {
 			case "chrome":
@@ -144,33 +144,33 @@ public class DriverFactory {
 	public Properties initProp() {
 
 		// mvn clean install -Denv="qa"
-		FileInputStream ip = null;
+		InputStream ip = null;
 		prop = new Properties();
 
 		String envName = System.getProperty("env");
 		System.out.println("env name is : " + envName);
 
-//		// check for any override
-//		for(String key: prop.stringPropertyNames()){
-//			if(System.getProperties().containsKey(key)){
-//				prop.setProperty(key, System.getProperty(key));
-//			}
-//		}
-//
-//		// print
-//		System.out.println("Test Properties");
-//		System.out.println("-----------------");
-//		for(String key: prop.stringPropertyNames()){
-//			System.out.println("{}={}"+ key + prop.getProperty(key));
-//		}
-//		System.out.println("-----------------");
+		// check for any override
+		for(String key: prop.stringPropertyNames()){
+			if(System.getProperties().containsKey(key)){
+				prop.setProperty(key, System.getProperty(key));
+			}
+		}
+
+		// print
+		System.out.println("Test Properties");
+		System.out.println("-----------------");
+		for(String key: prop.stringPropertyNames()){
+			System.out.println("{}={}"+ key + prop.getProperty(key));
+		}
+		System.out.println("-----------------");
 
 
 
 		try {
 			if (envName == null) {
 				System.out.println("no env is given...hence running it on QA env..by default");
-				ip = new FileInputStream(DEFAULT_PROPERTIES);
+				ip = ResourceLoader.getResource(DEFAULT_PROPERTIES);
 			} else {
 
 				switch (envName.toLowerCase().trim()) {
@@ -197,6 +197,8 @@ public class DriverFactory {
 
 			}
 		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 

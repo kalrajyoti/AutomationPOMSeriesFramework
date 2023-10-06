@@ -25,6 +25,7 @@
 		<logback.version>1.4.8</logback.version>
 		<!-- output directory -->
 		<package.directory>${project.build.directory}/docker-resources</package.directory>
+		<package.directory1>${package.directory}/allure-result</package.directory1>
 	</properties>
 
 	<dependencies>
@@ -147,7 +148,7 @@
 						<suiteXmlFile>src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>
 						<!-- 						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
 					</suiteXmlFiles>
-
+<!--					<reportsDirectory>target/test-output</reportsDirectory>-->
 					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
