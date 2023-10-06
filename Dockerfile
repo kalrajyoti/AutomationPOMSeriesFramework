@@ -8,8 +8,10 @@ WORKDIR /home/selenium-docker
 
 # Add the required files
 ADD target/docker-resources ./
+ADD runner.sh               runner.sh
 
 
 # Start the runner.sh
-ENTRYPOINT  java -cp 'libs/*' org.testng.TestNG testrunners/testng_regression.xml
+#ENTRYPOINT sh runner.sh
+ENTRYPOINT  java -cp 'libs/*' org.testng.TestNG testrunners/testng_regression.xml -threadcount 4
 

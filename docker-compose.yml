@@ -10,7 +10,6 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_GRID_URL=http://localhost:4444
-
   edge:
     image: selenium/node-edge
     shm_size: 2gb
@@ -21,9 +20,8 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_GRID_URL=http://localhost:4444
-
   firefox:
-    image: seleniarm/node-firefox:4.10
+    image: selenium/node-firefox:4.10
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -32,7 +30,6 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_GRID_URL=http://localhost:4444
-
   selenium-hub:
     image: selenium/hub
     container_name: hub
@@ -40,14 +37,24 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
-
+  vendor-portal:
+    image: 335022/seleniumdocker
+    depends_on:
+        - chrome
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=selenium-hub
+      - THREAD_COUNT=4
+      - TEST_SUITE=testng_regression.xml
+    volumes:
+      - ./allure-results:/home/selenium-docker/allure-results
   jenkins:
     image: jenkins/jenkins
     privileged: true
-    user: jenkins
+    user: root
     ports:
        - 8080:8080
        - 50000:50000
     container_name: jenkins
     volumes:
-      - /Users/jyoti.kalra:/var/jenkins_home
+      - /Users/jyoti.kalra/home:/var/jenkins_home
