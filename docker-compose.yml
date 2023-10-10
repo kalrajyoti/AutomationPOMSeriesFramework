@@ -42,7 +42,7 @@ services:
     depends_on:
         - chrome
     environment:
-      - BROWSER=chrome
+      - BROWSER
       - HUB_HOST=selenium-hub
       - THREAD_COUNT=4
       - TEST_SUITE=testng_regression.xml
