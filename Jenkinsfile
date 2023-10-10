@@ -14,20 +14,18 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                script {
-                    app = docker.build('335022/seleniumdocker')
-                }
+               sh 'docker build -t=335022/seleniumdocker .'
             }
         }
 
         stage('Push Image'){
-            steps{
-                script {
-                    // registry url is blank for dockerhub
-                    docker.withRegistry('', 'dockerhub-creds') {
-                        app.push("latest")
+          environment{
+                        // assuming you have stored the credentials with this name
+                        DOCKER_HUB = credentials('dockerhub-creds')
                     }
-                }
+            steps{
+                sh 'docker login -u ${DOCKER_HUB_USR} -p ${DOCKER_HUB_PSW}'
+                sh 'docker push 335022/seleniumdocker'
             }
         }
 
