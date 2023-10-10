@@ -12,6 +12,6 @@ ADD runner.sh               runner.sh
 
 
 # Start the runner.sh
-#ENTRYPOINT sh runner.sh
-ENTRYPOINT  java -cp 'libs/*' org.testng.TestNG testrunners/testng_regression.xml -threadcount 4
+ENTRYPOINT sh runner.sh
+#ENTRYPOINT  java -cp 'libs/*' org.testng.TestNG testrunners/testng_regression.xml -threadcount 4
 
